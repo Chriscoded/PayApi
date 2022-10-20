@@ -243,6 +243,17 @@ namespace PayAPI.Repository.ProcessPayment
                     }
 
                 }
+                else
+                {
+                    return new OperationResult()
+                    {
+                        Message = "The request is invalid: 400 Bad request",
+                        Status = OperationStatus.Unknown,
+                        Succeeded = false,
+                        StatusCode = HttpStatusCode.BadRequest
+                    };
+                }
+
 
             }
 
